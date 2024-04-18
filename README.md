@@ -1,1 +1,1 @@
-# rust-graphql
+# rust-async-graphql
