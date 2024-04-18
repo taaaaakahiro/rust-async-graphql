@@ -1,7 +1,17 @@
 [package]
-name = "rust-graphql"
+name = "rust-async-graphql"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-async-graphql = { version = "3.0", features = ["chrono"] }
+axum = { version = "0.7.5" }
+tokio = { version = "1.19.2", features = ["rt-multi-thread", "macros"] }
+serde = { version = "1.0.136", features = ["derive"] }
+serde_json = "1.0.79"
+tower-http = { version = "0.5.2", features = ["cors"] }
+axum-macros = "0.4.1"
+async-graphql = { version = "7.0.3", features = ["chrono"] }
+sqlx = { version = "0.7.4", features = ["mysql", "runtime-tokio-rustls", "time", "chrono"] }
+anyhow = "1.0"
+chrono = "0.4"
+thiserror = "1.0"
