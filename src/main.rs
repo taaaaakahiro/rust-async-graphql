@@ -39,8 +39,8 @@ async fn main() {
 
         let addr = format!("0.0.0.0:{}", cfg.db.port);
         tracing::info!("listening on {}", addr);
-        let addr = TcpListener::bind(addr).await.unwrap();
-        axum::serve(addr, app).await.unwrap();
+        let addr = TcpListener::bind(addr).await.expect("listener error");
+        axum::serve(addr, app).await.expect("serve error");
     };
 
     tokio::join!(server);
